@@ -1,8 +1,12 @@
 var TransitionGroup = React.addons.CSSTransitionGroup;
 
+//Componente main, vai representar toda a pagina
 var Main = React.createClass({
    displayName: "Main",
    
+   //metodo usado para obter o estado inicial do componente
+   //aqui pode ser usado props para inicializar caso
+   //necessario
    getInitialState: function(){
      
      this.getPostData();
@@ -14,7 +18,8 @@ var Main = React.createClass({
      
        
    },
-   
+   //funcao criada para buscar os dados do servidor
+   //de tempos em tempos
    getPostData: function(){
       
      var getDataAgain = this.getPostData;
@@ -34,9 +39,12 @@ var Main = React.createClass({
       });
        
    },
-   
+   //metodo de renderização do componente
    render: function(){
-       console.log(this.state.posts);
+   
+       //aqui eu crio para cara post no state
+       //um component pos e adiciono e passo o 
+       //objeto post como propriedade
        var posts = this.state.posts.map(function(post){
           return <Post key={post.uuid} post={post} />; 
        });
