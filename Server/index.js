@@ -6,7 +6,8 @@ var uuid = require("uuid");
 var server = new Hapi.Server();
 server.connection({ 
     host: 'localhost', 
-    port: 3000 
+    port: 3000  ,
+	routes: { cors: true } 
 });
 
 var posts = [];
@@ -22,7 +23,7 @@ server.route({
 
 
 function addPost(callback){
-	
+	console.log("added!");
 	Frase.random(function(err, frase){
 		
 		if(!err){
@@ -43,21 +44,27 @@ function addPost(callback){
 				return post.frase == fr.frase;
 			})[0];
 			
-			if(filtered) return;
+			//if(filtered) return;
 			
 			posts.unshift(fr);
 			
 			posts = posts.slice(0, 30);
 			
 		}
+		
 		callback();
 		
 	});
 }
 
 function nextPost(){
+	
+		console.log("called!");
 	addPost(function(){
-		setTimeout(nextPost, (Math.random() * 4000) + 2000);	
+		console.log("cb");
+		var tempo = Math.floor(Math.random() * 4000) + 2000;
+		console.log(tempo);
+		setTimeout(nextPost, tempo);	
 	});
 }
 

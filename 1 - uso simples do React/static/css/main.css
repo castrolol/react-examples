@@ -1,0 +1,45 @@
+.post {
+    background-color: rgb(252, 240, 204);
+    margin: 16px;
+    padding: 15px;
+    font-family: 'Segoe UI' Verdana Roboto;
+    border: 1px solid rgba(120, 110, 90, 0.5);
+    box-shadow: inset 0px 0px 10px rgba(120, 110, 90, 0.5);
+}
+
+.autor-post {
+  text-align: right;
+  display: block;
+  margin-top: 10px;
+  color: rgba(120, 110, 100, 1);
+  font-family: Helvetica, Tahoma, sans-serif;
+}
+
+.fade-in-enter {
+  opacity: 0.01;
+  max-height: 1%;
+  transition: all .5s ease-in;
+}
+
+.fade-in-enter .content {
+  opacity: 0;
+}
+
+.fade-in-enter.fade-in-enter-active {
+  opacity: 1;
+  max-height: 100%;
+}
+
+.fade-in-enter.fade-in-enter-active  .content {
+  opacity: 1;
+}
+
+
+.fade-in-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.fade-in-leave.fade-in-leave-active {
+  opacity: 0.01;
+}

@@ -1,41 +1,50 @@
+var TransitionGroup = React.addons.CSSTransitionGroup;
+
 var Main = React.createClass({
    displayName: "Main",
    
    getInitialState: function(){
      
+     this.getPostData();
+     
      return {
          posts: []
      };
        
-     this.getPostData();
+     
        
    },
    
    getPostData: function(){
-     var setState = this.setState;
+      
+     var getDataAgain = this.getPostData;
      fetch(this.props.url)
       .then(function(response){
-          return response.json();
+            return response.json();
       })
       .then(function(obj){
-          setState({
+          this.setState({
               posts: obj
           });
-          setTimeout(this.getPostData, 10000);
+          setTimeout(getDataAgain, 1000);
+      }.bind(this))
+      .catch(function(){
+         
+         console.log(arguments);
       });
        
    },
    
    render: function(){
-       
+       console.log(this.state.posts);
        var posts = this.state.posts.map(function(post){
-          return <Post key={post.uuid} posts={post} />; 
+          return <Post key={post.uuid} post={post} />; 
        });
        
         return (
-            <div>
+            <TransitionGroup transitionName="fade-in">
                 {posts}
-            </div>
+            </TransitionGroup>
         );
        
    }
