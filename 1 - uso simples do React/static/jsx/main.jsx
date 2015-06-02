@@ -21,21 +21,23 @@ var Main = React.createClass({
    //funcao criada para buscar os dados do servidor
    //de tempos em tempos
    getPostData: function(){
-      
-     var getDataAgain = this.getPostData;
+ 
      fetch(this.props.url)
       .then(function(response){
-            return response.json();
+          return response.json();
       })
-      .then(function(obj){
+      .then(function(posts){
+                    
           this.setState({
-              posts: obj
+              posts: posts
           });
-          setTimeout(getDataAgain, 1000);
+
+          setTimeout(this.getPostData, 1000);
+
       }.bind(this))
-      .catch(function(){
-         
-         console.log(arguments);
+      .catch(function(err){
+        console.log(err);
+        setTimeout(this.getPostData, 1000);
       });
        
    },

@@ -7,16 +7,14 @@ var Post = React.createClass({
    render: function(){
 	   //uso a prop post para completar os valores de cara post
 		return (
-			<div className="post">
-				<div className="content">
-			 		<div className="frase">
-			 			{this.props.post.frase}
-			 		</div>
-			 		<span className="autor-post">
-			 			{this.props.post.autor}
-			 		</span>
-				</div>
-			</div>
+			<blockquote >
+				<cite>
+			 		{this.props.post.frase}
+			 	</cite>
+			 	<div className="autor">
+			 		{this.props.post.autor}
+			 	</div>
+		 	</blockquote>
 		);
 	   
    }
