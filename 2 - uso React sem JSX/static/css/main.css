@@ -1,0 +1,66 @@
+blockquote cite {
+  display: block;
+  color: #000;
+  letter-spacing: 0.1em;
+  text-align: left;
+  font-variant: small-caps;
+  margin-left: 70px;
+  font-style: normal;
+}
+
+blockquote {
+  position: relative;
+  margin: 10px auto;
+  padding: 30px 15px;
+  font-size: 15px;
+  border: none;
+  background: #eeeeee;
+  border-radius: 5px;
+  border-left: 5px solid #eee;
+}
+
+blockquote:before {
+  content: '’’';
+  display: block;
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  font-size: 10em;
+  text-align: left;
+  font-family: Arial;
+  letter-spacing: -16px;
+  font-style: normal;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+blockquote:after {
+  content: "";
+}
+
+blockquote .autor {
+  float: right !important;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+
+.fade-in-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.fade-in-enter.fade-in-enter-active {
+  opacity: 1;
+}
+
+.fade-in-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.fade-in-leave.fade-in-leave-active {
+  opacity: 0.01;
+}
