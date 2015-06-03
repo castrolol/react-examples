@@ -1,12 +1,12 @@
 var cheerio = require("cheerio");
 var request = require("request");
-var Frase = require("./frases.js");
+var Frase = require("./server/frases.js");
 var fs = require("fs");
  
- 
-	fs.unlinkSync(__dirname+'/data/frases');
+try{
+	fs.unlinkSync(__dirname +'/server/data/frases');
 	console.log("removed old data")
- 
+}catch(e){}
  
 
 var url = "http://www.mundodasmensagens.com/";

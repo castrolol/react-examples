@@ -19,4 +19,9 @@ npm start
 
 e deixe o servidor rodando em segundo plano...
  
+para repopular os dados use o comando
+
+```shell
+node populate
+```
 para abrir http://localhost:8000
