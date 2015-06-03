@@ -1,0 +1,49 @@
+<html>
+
+<head>
+     
+    <script src="babel-transformer.js"></script> <!-- transformer para jsx, não precisa do react -->
+    
+ 
+    <script src="http://cdn.polyfill.io/v1/polyfill.js?features=fetch,Promise"></script>
+        
+    <script>
+    // função para substituir o React no jSX
+    // use /** @jsx htmlElement */
+	function htmlElement(type, attrs) {
+
+		var children = [].slice.call(arguments, 2);
+		var element = document.createElement(type);
+
+		attrs && Object.keys(attrs).forEach(function(key){
+			element.setAttribute(key, attrs[key]);
+		});
+ 
+		children
+			.filter(function(child){
+				return child != null;
+			})
+			.map(function(child){
+				return child instanceof HTMLElement ? child : document.createTextNode(child);
+			})
+			.forEach(function(child){
+				element.appendChild(child);
+			});
+	
+	  	return element;
+	};
+
+    </script>
+ 
+    
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    
+    <main></main>
+    <script src="jsx/app.jsx" type="text/babel" ></script>
+   
+</body>
+
+</html>
