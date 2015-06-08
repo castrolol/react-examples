@@ -90,6 +90,13 @@
 	-moz-border-radius: 0 ;
 	border-radius: 0 ;
 }
+
+
+.comentario .comentario .balao .conteudo {
+	-webkit-border-radius:  0 0 4px 4px;
+	-moz-border-radius:  0 0 4px 4px;
+	border-radius:  0 0 4px 4px;
+}
  
 .comentario .comentario {
 	width: calc(100% - 80px);

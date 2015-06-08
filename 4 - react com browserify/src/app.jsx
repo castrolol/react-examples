@@ -1,5 +1,5 @@
 var React = require("react"); 
-var ComentarioContainer = require("./comentarios-container");
+var ComentarioContainer = require("./comentario-editor");
 var ComentarioLista = require("./comentario-lista");
 var server = require("./server")
  

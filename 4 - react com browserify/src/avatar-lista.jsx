@@ -13,22 +13,25 @@ var AvatarLista = React.createClass({
 			this.setState({
 				avatars: avatars.map(function(avatar){
 					return avatar.avatarId;
-				}),
-				selected: avatars[0].avatarId
+				})
+				
 			});
+
+			if(!this.state.avatar){
+				this.setState({
+					selected: avatars[0].avatarId
+				});
+			}
 
 	    }.bind(this));
 		  
 		return {
 			avatars: [],
 			isOpen: false,
-			selected: null
+			selected: this.props.initialAvatar || null
 		}
 	},
-
-	getSelected: function(){
-		return this.state.selected;
-	},
+ 
 
 	getDefaultProps: function () {
 	    return {
@@ -51,7 +54,11 @@ var AvatarLista = React.createClass({
 			this.setState({
 				isOpen: false,
 				selected: idAvatar
-			})
+			});
+			
+			if(this.props.onChange){
+				this.props.onChange(idAvatar);
+			}
 
 		}.bind(this);
 

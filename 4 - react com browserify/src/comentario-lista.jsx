@@ -1,6 +1,5 @@
 var React = require("react");
 var Comentario = require("./comentario");
-var ComentariosContainer = require("./comentarios-container");
 
 var ComentarioLista = React.createClass({
 
@@ -10,6 +9,7 @@ var ComentarioLista = React.createClass({
 			comentarios: []  
 	    };
 	}, 
+	
 	render: function(){
 		
 		console.log(this.props);

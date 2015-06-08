@@ -1,14 +1,15 @@
 var React = require("react/addons");
 var AvatarLista= require("./avatar-lista");
 
-var ComentariosContainer = React.createClass({
+var ComentarioEditor = React.createClass({
 	mixins: [React.addons.LinkedStateMixin],
 
 	getInitialState: function () {
 	    return {
 	        editando: false,
 	        textoComentario: "" ,
-	        autor: ""
+	        autor: "",
+	        avatar: null
 	    };
 	},	
 
@@ -29,17 +30,32 @@ var ComentariosContainer = React.createClass({
 
 	},
 
-	handleAvatarChange: function(){
-
+	handleAvatarChange: function(avatar){
+		this.setState({
+			avatar: avatar
+		});
+	},
+	
+	handleCancelarComentario: function(e){
+		e.preventDefault();
+		
+		this.setState({
+			textoComentario: "",
+			editando: false
+		}); 
 	},
 
 	handleEnviarComentario: function(){
+
+		if(!this.state.textoComentario){
+			return;
+		}
 
 		this.props.onComentarioEnviado({
 			data: new Date(),
 			texto: this.state.textoComentario,
 			autor: this.state.autor,
-			avatar: this.refs.avatars.getSelected(),
+			avatar: this.state.avatar,
 			comentarios: []
 		});
 
@@ -74,11 +90,14 @@ var ComentariosContainer = React.createClass({
 						Seu Nome: 
 						<input type="text" valueLink={this.linkState('autor')} />
 					</label>
-					<AvatarLista ref="avatars" />
+					<AvatarLista initialSelected={this.state.avatar} onChange={this.handleAvatarChange} />
 					<textarea  valueLink={this.linkState('textoComentario')} />
 					<button onClick={this.handleEnviarComentario} >
 						Enviar 
 					</button>
+					<a href="#" onClick={this.handleCancelarComentario} >
+						cancelar
+					</a>
 				</div>
 			</div>
 		 
@@ -87,4 +106,4 @@ var ComentariosContainer = React.createClass({
 
 });
 
-module.exports = ComentariosContainer;
+module.exports = ComentarioEditor;

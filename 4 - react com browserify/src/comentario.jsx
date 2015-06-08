@@ -1,6 +1,6 @@
 var React = require("react");
 var Avatar = require("./avatar");
-var ComentariosContainer = require("./comentarios-container");
+var ComentarioEditor = require("./comentario-editor");
 
 var ComentarioLista = require("./comentario-lista");
 
@@ -58,7 +58,7 @@ var Comentario = React.createClass({
 					</div>
 					{ this.props.ehResposta ?
 						null :
-						<ComentariosContainer ehResposta={true}  onComentarioEnviado={this.handleResposta}   />
+						<ComentarioEditor ehResposta={true}  onComentarioEnviado={this.handleResposta}   />
 					}
 				</div>
 				{this.props.children}
