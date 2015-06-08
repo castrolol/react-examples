@@ -13,3 +13,9 @@
 {"k":"0000000078","o":"0000000272","v":"001"}
 {"_id":4,"_uid":4,"_dt":1433785538942,"_s":"796e9fe47441113a9914cfa80f974b59"}
 {"data":{"$wrap":"$date","v":1433785448924,"h":"2015-06-08T17:44:08.924Z"},"texto":"I'll watch Regular Show!","autor":"Finn","avatar":"cc622f36-7b3b-4dff-aed7-7c1204c696ca","key":"4d779243-2544-4e46-a3e1-7b8d5ee07fd9","comentarios":[],"_id":{"$wrap":"$oid","v":4},"__v":0}
+{"k":"0000000078","o":"0000000281","v":"001"}
+{"_id":5,"_uid":5,"_dt":1433786060244,"_s":"1fca393e1956bcdda3693f4284a0fd4a"}
+{"data":{"$wrap":"$date","v":1433785969541,"h":"2015-06-08T17:52:49.541Z"},"texto":"Poque que hoje não é sextaaaa?! ","autor":"Zé","avatar":"ca8987e4-746f-4ec2-9254-c92ce998c459","key":"d8462630-413d-4d27-86da-1fa3b5cbb79a","comentarios":[],"_id":{"$wrap":"$oid","v":5},"__v":0}
+{"k":"0000000078","o":"0000000477","v":"001"}
+{"_id":5,"_uid":5,"_dt":1433786143663,"_s":"05902ea6a282ccbb1a7c223ae9ab35e1"}
+{"data":{"$wrap":"$date","v":1433785969541,"h":"2015-06-08T17:52:49.541Z"},"texto":"Poque que hoje não é sextaaaa?! ","autor":"Zé","avatar":"ca8987e4-746f-4ec2-9254-c92ce998c459","key":"d8462630-413d-4d27-86da-1fa3b5cbb79a","comentarios":[{"data":{"$wrap":"$date","v":1433786053601,"h":"2015-06-08T17:54:13.601Z"},"texto":"Porrqueeeeee.... ","autor":"Jãum","avatar":"b62312a6-7517-4c43-a3ea-3cfda804b377","comentarios":[],"_id":-8134}],"_id":{"$wrap":"$oid","v":5},"__v":0}

@@ -73,6 +73,13 @@ a.container-rodape  {
 
 }
  
+.container-rodape a {
+	position: absolute;
+	right: 13px;
+	bottom: 17px;
+	z-index: 0;
+}
+ 
 .container-rodape button:active {
 	background: #ECECEC;
 	outline: none;

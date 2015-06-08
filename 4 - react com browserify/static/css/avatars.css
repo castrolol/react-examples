@@ -3,7 +3,8 @@
   height: 75px;
   background-color: #FFF;
   padding: 5px;
-  width: 90%;
+  width: calc(100% - 12px);
+  z-index: 9000;
 }
 
  .avatar {

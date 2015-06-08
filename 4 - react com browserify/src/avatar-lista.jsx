@@ -18,7 +18,7 @@ var AvatarLista = React.createClass({
 			});
 			setTimeout(function(){
 				
-				if(!this.state.avatar){
+				if(!this.state.selected){
 					this.handleSelection(avatars[0].avatarId)();
 				}
 				
