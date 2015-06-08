@@ -90,7 +90,7 @@ var ComentarioEditor = React.createClass({
 						Seu Nome: 
 						<input type="text" valueLink={this.linkState('autor')} />
 					</label>
-					<AvatarLista initialSelected={this.state.avatar} onChange={this.handleAvatarChange} />
+					<AvatarLista initialAvatar={this.state.avatar} onChange={this.handleAvatarChange} />
 					<textarea  valueLink={this.linkState('textoComentario')} />
 					<button onClick={this.handleEnviarComentario} >
 						Enviar 

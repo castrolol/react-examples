@@ -16,12 +16,13 @@ var AvatarLista = React.createClass({
 				})
 				
 			});
-
-			if(!this.state.avatar){
-				this.setState({
-					selected: avatars[0].avatarId
-				});
-			}
+			setTimeout(function(){
+				
+				if(!this.state.avatar){
+					this.handleSelection(avatars[0].avatarId)();
+				}
+				
+			}.bind(this), 100)
 
 	    }.bind(this));
 		  
