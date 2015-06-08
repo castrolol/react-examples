@@ -1,0 +1,81 @@
+var React = require("react"); 
+var Avatar = require("./avatar");
+var server = require("./server")
+
+var AvatarLista = React.createClass({
+
+	getInitialState: function(){
+		
+		server.get("/avatars", function(err, avatars){
+
+			if(err) return console.log(err);
+			
+			this.setState({
+				avatars: avatars.map(function(avatar){
+					return avatar.avatarId;
+				}),
+				selected: avatars[0].avatarId
+			});
+
+	    }.bind(this));
+		  
+		return {
+			avatars: [],
+			isOpen: false,
+			selected: null
+		}
+	},
+
+	getSelected: function(){
+		return this.state.selected;
+	},
+
+	getDefaultProps: function () {
+	    return {
+			avatares: []
+	    };
+	},
+
+	handleChangeImage: function(){
+
+		this.setState({
+			isOpen: true
+		});
+
+	},
+
+	handleSelection: function(idAvatar){
+
+		return function(){
+
+			this.setState({
+				isOpen: false,
+				selected: idAvatar
+			})
+
+		}.bind(this);
+
+	},
+
+	render: function(){
+
+		if(!this.state.isOpen){
+
+			return <Avatar id={this.state.selected} onClick={this.handleChangeImage} />;
+
+		}
+
+		var avatares = this.state.avatars.map(function(idAvatar){
+			var isSelected = idAvatar === this.state.selected;
+			return (<Avatar id={idAvatar} selected={isSelected} onClick={this.handleSelection(idAvatar)} />);
+
+		}.bind(this)); 
+
+		return (<div className="lista-avatars"> 
+			{avatares} 
+		</div>);
+	}
+
+});
+
+module.exports = AvatarLista;

@@ -1,0 +1,35 @@
+/**
+ * Oscuro: #283035
+ * Azul: #03658c
+ * Detalle: #c7cacb
+ * Fondo: #dee1e3
+ ----------------------------------*/
+ * {
+ 	margin: 0;
+ 	padding: 0;
+ 	-webkit-box-sizing: border-box;
+ 	-moz-box-sizing: border-box;
+ 	box-sizing: border-box;
+ }
+
+ a {
+ 	color: #03658c;
+ 	text-decoration: none;
+ }
+
+ul {
+	list-style-type: none;
+}
+
+body {
+	font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
+	background: #dee1e3;
+}
+
+
+*:focus {
+	outline: none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.15);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.15);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.15);
+}

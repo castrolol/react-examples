@@ -1,0 +1,103 @@
+.comentario {
+	clear: both;
+	margin-top: 20px;
+
+} 
+
+.comentario .balao {
+	width: 680px;
+	margin-left: 90px;
+	position: relative;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+}
+
+.comentario .balao:before, .comentario .balao:after {
+	content: '';
+	height: 0;
+	width: 0;
+	position: absolute;
+	display: block;
+	border-width: 10px 12px 10px 0;
+	border-style: solid;
+	border-color: transparent #FCFCFC;
+	top: 8px;
+	left: -11px;
+}
+
+.comentario .balao:before {
+	border-width: 11px 13px 11px 0;
+	border-color: transparent rgba(0,0,0,0.05);
+	left: -12px;
+}
+
+.reply-list .balao {
+	width: 610px;
+}
+.balao .titulo {
+	background: #FCFCFC;
+	padding: 10px 12px;
+	border-bottom: 1px solid #E5E5E5;
+	overflow: hidden;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
+
+.balao .titulo i {
+	float: right;
+	margin-left: 14px;
+	position: relative;
+	top: 2px;
+	color: #A6A6A6;
+	cursor: pointer;
+	-webkit-transition: color 0.3s ease;
+	-o-transition: color 0.3s ease;
+	transition: color 0.3s ease;
+}
+
+.balao .titulo i:hover {
+	color: #03658c;
+}
+
+.balao .nome {
+	color: #283035;
+	font-size: 14px;
+	font-weight: 700;
+	float: left;
+	margin-right: 10px;
+}
+
+.balao .nome a {
+	color: #283035;
+}
+
+.balao .titulo span {
+	float: left;
+	color: #999;
+	font-size: 13px;
+	position: relative;
+	top: 1px;
+}
+
+.balao .conteudo {
+	background: #FFF;
+	padding: 12px;
+	font-size: 15px;
+	color: #595959;
+	-webkit-border-radius: 0 ;
+	-moz-border-radius: 0 ;
+	border-radius: 0 ;
+}
+ 
+.comentario .comentario {
+	width: calc(100% - 80px);
+	margin-left: 80px;
+}
+
+
+.comentario .comentario .balao {
+
+	width: 600px;
+}
